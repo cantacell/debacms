@@ -1,0 +1,85 @@
+---
+sidebar_label: Sending Events
+sidebar_position: 5
+id: Sending Events
+toc_min_heading_level: 2
+toc_max_heading_level: 4
+---
+
+### Sending Events
+
+Events are sent by making a Data Layer push. When a push is made the entire state of the Data Layer is sent along with the push in addition to the event's parameters, which are sent in <code>eventProperties</code>.
+
+:::info
+Values in <code>eventProperties</code> do not store their state for future calls, values outside of <code>eventProperties</code> do store their state for future calls.
+:::
+
+Why would that happen? See the example below, you could imagine on a Volkswagen page a consumer clicks on a Subaru vehicle that showed up in a carousel. Typically the vehicle would have already been set at the page view. The page remains a Volkswagen page, but this individual click is a Subaru click.
+
+```js title='Example:'
+// A data layer push
+coxAutoDataLayer.push({
+  vehicle: {
+    make: 'Volkswagen'
+  }
+});
+
+// A data layer push with event metadata
+coxAutoDataLayer.push({
+  eventProperties: {
+    action: 'click',
+    element: 'carousel'
+    make: 'Subaru'
+  },
+});
+
+console.log(coxAutoDataLayer.getState().vehicle.make) // Volkswagen
+```
+
+New state:
+
+```js
+{
+  "vehicle": {
+    "make": "Volkswagen"
+  },
+  "eventProperties": {
+    "action": "click",
+    "element": "carousel",
+    "make": "Subaru"
+  },
+}
+```
+
+Now, if a new data layer push is made, then the `eventProperties` object inside the Data Layer will be removed.
+
+Example:
+
+```js
+coxAutoDataLayer.push({
+  vehicle: {
+    make: 'Audi'
+  }
+});
+```
+
+New state:
+
+```js
+{
+  "vehicle": {
+    "make": "Audi"
+  }
+}
+```
+
+### Push before library is loaded
+
+It can be possible to push into the `coxAutoDataLayer` object even if the library is loaded lazily. It is required to create the `coxAutoDataLayer` manually:
+
+```js title='Example:'
+window.coxAutoDataLayer = window.coxAutoDataLayer || [];
+```
+
+When the library will be loaded, then it will process ([according to this](./getting-started.mdx#setup-page-level-data)) all pushed data contained into `coxAutoDataLayer`.
+

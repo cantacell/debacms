@@ -1,0 +1,33 @@
+---
+sidebar_label: Send Page View Event
+sidebar_position: 3
+id: Page View Event
+toc_min_heading_level: 2
+toc_max_heading_level: 4
+---
+
+### Send a Page View event
+
+Here is how you manually fire a page-view event:
+
+```js title='Example:'
+coxAutoDataLayer.push({
+  eventProperties: {
+    action : 'view',
+    element: 'page'
+  }
+});
+```
+
+By default, we will **not** automatically fire the first page view event.
+If you want that the first page-view event to be fired automatically, here is how you can opt in:
+
+```js title='Example:'
+coxAutoDataLayer.push({
+  autoFirstPageView: true
+});
+```
+
+:::info
+It is possible to set `autoFirstPageView` to `true` only before the library is loaded.
+:::

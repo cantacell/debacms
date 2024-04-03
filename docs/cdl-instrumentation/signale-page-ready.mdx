@@ -1,0 +1,35 @@
+---
+sidebar_label: Delay Events Processing
+sidebar_position: 2
+id: Delay Events Processing
+toc_min_heading_level: 2
+toc_max_heading_level: 4
+---
+
+### Signal Page is Ready
+
+By default, the cdl starts to process the data layer (`coxAutoDataLayer`) just after the library is downloaded.
+
+Some pages don't have all the data necessary right at load and that is where setting `dataLayerReady` to `false` comes in handy.
+
+:::info
+It is possible set to `false` only before the library is loaded.
+:::
+
+```js title='Example:'
+coxAutoDataLayer.push({
+  ...,
+  dataLayerReady: false
+});
+```
+
+#### Manually set to true
+
+If `dataLayerReady` was previously set to `false`, in order to set it to `true` it is required to make a data layer push that contains the `dataLayerReady` property
+
+```js title='Example:'
+coxAutoDataLayer.push({
+  ...,
+  dataLayerReady: true
+});
+```
