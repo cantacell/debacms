@@ -19,7 +19,7 @@ Another example:
 
 Current state:
 
-```js title='Example:'
+```js
 {
   'application': {
     'componentId': '123456',
@@ -55,6 +55,119 @@ New state:
     'version': '1.0',
     'isProduction': false,
     'name': 'my application name'
+  }
+}
+```
+
+### Mechanism used to update Data Layer's State
+When a new push is performed on `coxAutoDataLayer`, a merge mechanism is applied.
+Only when a field is an Array then a substitution is applied.
+- Pushing an object as a new field:
+
+```js
+// Current state:
+{
+  'application': {
+    'componentId': '123456'
+  },
+}
+
+// Pushing 'myObject' with 'myProp'
+coxAutoDataLayer.push({
+  'myObject': {
+    'myProp': 1
+  }
+});
+
+// New state
+{
+  'application': {
+    'componentId': '123456'
+  },
+  'myObject': {
+    'myProp': 1
+  }
+}
+```
+
+- Pushing an object as an existing field:
+```js
+// Current state:
+{
+  'application': {
+    'componentId': '123456'
+  },
+}
+
+// Pushing 'application' with 'myProp'
+coxAutoDataLayer.push({
+  application: {
+    'myProp': 1
+  }
+});
+
+// New state
+{
+  'application': {
+    'componentId': '123456',
+    'myProp': 1
+  }
+}
+```
+
+- Pushing an array as a new field:
+```js
+// Current state:
+{
+  'application': {
+    'componentId': '123456'
+  },
+}
+
+// Pushing 'myObject' with 'myArray'
+coxAutoDataLayer.push({
+  'myObject': {
+    'myArray': [1, 2, 3]
+  }
+});
+
+// New state
+{
+  'application': {
+    'componentId': '123456',
+  },
+  'myObject': {
+    'myArray': [1, 2, 3]
+  }
+}
+```
+
+- Pushing an array as an existing field:
+```js
+// Current state:
+{
+  'application': {
+    'componentId': '123456'
+  },
+  'myObject': {
+    'myArray': [1, 2, 3]
+  }
+}
+
+// Pushing 'myObject' with 'myArray'
+coxAutoDataLayer.push({
+  'myObject': {
+    'myArray': [4, 5, 6]
+  }
+});
+
+// New state
+{
+  'application': {
+    'componentId': '123456',
+  },
+  'myObject': {
+    'myArray': [4, 5, 6] // <--- the array values are overriden
   }
 }
 ```
@@ -136,7 +249,7 @@ Example:
 
 Current state:
 
-```js title='Example:'
+```js
 {
   'application': {
     'componentId': '123456',
