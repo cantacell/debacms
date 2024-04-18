@@ -78,7 +78,7 @@ const config: Config = {
           sidebarId: 'tutorialSidebar',
           position: 'left',
           label: 'CDL Docs',
-          href: '/category/cdl-instrumentation',
+          to: '/category/cdl-instrumentation',
         },
         // {to: '/blog', label: 'Blog', position: 'left'},
         {
