@@ -1,4 +1,4 @@
 ---
 title: new page in newpath
 ---
-body
+body2
