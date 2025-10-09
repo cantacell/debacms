@@ -7,6 +7,8 @@ backend:
 media_folder: "static/img" # Media files will be stored in the repo under static/images/uploads
 public_folder: "/img/" # The src attribute for uploaded media will begin with /images/uploads
 
+publish_mode: editorial_workflow
+
 collections:
   - name: blog
     label: "blog"
@@ -31,3 +33,9 @@ collections:
 #          - { name: title, label: Title, widget: string }
 #          - { name: url, label: URL, widget: string }
 #          - { name: imageUrl, label: ImageURL, widget: string }
+    # Add nested and meta objects
+    nested:
+      depth: 100
+      summary: '{{title}}'
+      subfolders: true
+    meta: { path: { widget: string, label: 'Path', index_file: '_index' } }
