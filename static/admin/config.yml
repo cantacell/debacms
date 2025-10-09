@@ -37,5 +37,5 @@ collections:
     nested:
       depth: 100
       summary: '{{title}}'
-      subfolders: true
+      subfolders: false
     meta: { path: { widget: string, label: 'Path', index_file: '_index' } }
