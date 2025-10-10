@@ -4,10 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Content Manager</title>
-    <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url">
 </head>
 <body>
-<!-- Include the script that builds the page and powers Decap CMS -->
-<script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+<!-- 1. Load React and ReactDOM first -->
+<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+<!-- 2. Load Decap CMS -->
+<script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
+
+<!-- 3. Load your custom script last -->
+<script src="custom.js"></script>
 </body>
 </html>

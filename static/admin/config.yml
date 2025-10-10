@@ -38,4 +38,15 @@ collections:
       depth: 100
       summary: '{{title}}'
       subfolders: false
-    meta: { path: { widget: string, label: 'Path', index_file: '_index' } }
+    meta: { path: { widget: string, label: 'Path', index_file: '{{slug}}_index' } }
+
+  - name: "settings" # Or any other collection
+    label: "Settings"
+    files:
+      - file: "data/settings.json"
+        label: "Site Settings"
+        name: "site_settings"
+        fields:
+          - { label: "Site Title", name: "title", widget: "string" }
+          # Use your custom widget for a field like this:
+          - { label: "Sidebar Configuration", name: "sidebar_pages", widget: "sidebarConfig" }
