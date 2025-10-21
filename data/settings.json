@@ -1,3 +1,7 @@
 {
-  "label":  "Settings"
+  "label": "Settings",
+  "pages": [
+    "atroot2",
+    "Let's Partydddd"
+  ]
 }
