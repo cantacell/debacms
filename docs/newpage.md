@@ -1,4 +1,4 @@
 ---
-title: newpage
+title: newpagetitle
 ---
-newpage
+newpage with title
