@@ -1,5 +1,11 @@
 {
   "label": "Settings",
   "position": 2,
-  "sidebar": []
+  "sidebar": [
+    {
+      "title": "newpagetitle",
+      "_template": "doc",
+      "document": "docs/newpage.md"
+    }
+  ]
 }
