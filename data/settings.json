@@ -1,3 +1,26 @@
 {
-  "sidebar": []
+  "sidebar": [
+    {
+      "title": "Getting Started",
+      "_template": "doc",
+      "document": "docs/111.md"
+    },
+    {
+      "title": "new blog",
+      "_template": "doc",
+      "document": "docs/new-blog.md"
+    },
+    {
+      "title": "New Category",
+      "_template": "category",
+      "link": "generated",
+      "items": [
+        {
+          "title": "abc",
+          "_template": "doc",
+          "document": "docs/abc.md"
+        }
+      ]
+    }
+  ]
 }
