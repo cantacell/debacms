@@ -21,6 +21,11 @@
       "title": "newpagetitle2",
       "_template": "doc",
       "document": "docs/newpage.md"
+    },
+    {
+      "title": "efg2",
+      "_template": "doc",
+      "document": "docs/efg.md"
     }
   ]
 }
