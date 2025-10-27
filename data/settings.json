@@ -6,6 +6,11 @@
       "title": "newpagetitle",
       "_template": "doc",
       "document": "docs/newpage.md"
+    },
+    {
+      "title": "new blog",
+      "_template": "doc",
+      "document": "docs/new-blog.md"
     }
   ]
 }
