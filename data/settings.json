@@ -11,6 +11,11 @@
       "title": "new blog",
       "_template": "doc",
       "document": "docs/new-blog.md"
+    },
+    {
+      "title": "State",
+      "_template": "category",
+      "link": "generated"
     }
   ]
 }
