@@ -3,17 +3,7 @@
   "position": 2,
   "sidebar": [
     {
-      "title": "newpagetitle",
-      "_template": "doc",
-      "document": "docs/newpage.md"
-    },
-    {
-      "title": "new blog",
-      "_template": "doc",
-      "document": "docs/new-blog.md"
-    },
-    {
-      "title": "111",
+      "title": "Getting Started",
       "_template": "doc",
       "document": "docs/111.md"
     },
