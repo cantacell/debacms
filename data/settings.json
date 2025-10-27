@@ -16,6 +16,11 @@
       "title": "111",
       "_template": "doc",
       "document": "docs/111.md"
+    },
+    {
+      "title": "new blog",
+      "_template": "doc",
+      "document": "docs/new-blog.md"
     }
   ]
 }
