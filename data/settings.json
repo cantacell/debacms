@@ -11,16 +11,26 @@
       "document": "docs/new-blog.md"
     },
     {
-      "title": "New Category",
+      "title": "New Category444",
       "_template": "category",
       "link": "generated",
       "items": [
+        {
+          "title": "my new cat",
+          "_template": "category",
+          "link": "generated"
+        },
         {
           "title": "abc",
           "_template": "doc",
           "document": "docs/abc.md"
         }
       ]
+    },
+    {
+      "title": "new blog",
+      "_template": "doc",
+      "document": "docs/new-blog.md"
     }
   ]
 }
